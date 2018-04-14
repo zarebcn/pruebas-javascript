@@ -1,5 +1,6 @@
 /*import Persona from "./Persona";*/
 const Persona = require("./persona.js");
+const Calculator = require("./calculator.js");
 
 let nums = [1, 2, 3];
 nums.push(4);
@@ -118,3 +119,25 @@ let persona2 = new Persona ("Juan", 25, 1.70, 66);
 let persona3 = new Persona ("Luis", 52, 1.76, 85);
 
 console.log(persona1.toString());
+
+
+/*creada clase Calculator con varios metodos*/
+let calculadora = new Calculator();
+
+calculadora.setOperand1(4); /* operand1 = 4 */
+calculadora.setOperand2(2); /* operand2 = 2 */
+
+calculadora.sum();
+console.log(calculadora.getResult()); /* result = 6 */
+
+calculadora.setResultAsOperand1(true); /* operand1 = 6, operand2 = 0 */
+calculadora.setOperand2(3);
+
+calculadora.divide();
+console.log(calculadora.getResult()); /* result = 2 */
+
+calculadora.subtract();
+console.log(calculadora.getResult()); /* result = 3 */
+
+calculadora.clear();
+console.log(calculadora.getResult()); /* all operands and result = 0 */
