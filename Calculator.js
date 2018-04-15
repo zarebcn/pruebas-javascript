@@ -6,6 +6,7 @@ class Calculator {
         this.operand1 = 0;
         this.operand2 = 0;
         this.result = 0;
+        this.resultAsOperand1 = false;
     };
 
     setOperand1 (num) {
@@ -25,27 +26,77 @@ class Calculator {
     };
 
     sum () {
-        this.result = this.operand1 + this.operand2;
+
+        if (this.resultAsOperand1) {
+
+            this.operand1 = this.operand1 + this.operand2;
+            this.result = this.operand1;
+        } else {
+
+            this.result = this.operand1 + this.operand2;
+        };
     };
 
     multiply () {
-        this.result = this.operand1 * this.operand2;
+
+        if (this.resultAsOperand1) {
+
+            this.operand1 = this.operand1 * this.operand2;
+            this.result = this.operand1;
+        } else {
+
+            this.result = this.operand1 * this.operand2;
+        };
     };
 
     divide () {
-        this.result = this.operand1 / this.operand2;
+
+        if (this.resultAsOperand1) {
+
+            this.operand1 = this.operand1 / this.operand2;
+            this.result = this.operand1;
+        } else {
+
+            this.result = this.operand1 / this.operand2;
+        };
     };
 
     subtract () {
-        this.result = this.operand1 - this.operand2;
+
+        if (this.resultAsOperand1) {
+
+            this.operand1 = this.operand1 - this.operand2;
+            this.result = this.operand1;
+        } else {
+
+            this.result = this.operand1 - this.operand2;
+        };
+    };
+
+    power () {
+
+        if (this.resultAsOperand1) {
+
+            this.operand1 = Math.pow(this.operand1, this.operand2);
+            this.result = this.operand1;
+        } else {
+
+            this.result = Math.pow(this.operand1, this.operand2);
+        };
     };
 
     setResultAsOperand1 (b) {
 
         if (b) {
+            this.resultAsOperand1 = true;
             this.operand1 = this.result;
             this.operand2 = 0;
         };
+    };
+
+    getResultAsOperand1 () {
+
+        return this.resultAsOperand1;
     };
 
     getResult () {
@@ -56,6 +107,7 @@ class Calculator {
         this.operand1 = 0;
         this.operand2 = 0;
         this.result = 0;
+        this.resultAsOperand1 = false;
     };
 };
 

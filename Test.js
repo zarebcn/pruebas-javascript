@@ -133,11 +133,15 @@ console.log(calculadora.getResult()); /* result = 6 */
 calculadora.setResultAsOperand1(true); /* operand1 = 6, operand2 = 0 */
 calculadora.setOperand2(3);
 
-calculadora.divide();
+calculadora.sum(); /* operand1 = 9 */
+calculadora.sum(); /* operand1 = 12 */
+console.log(calculadora.getResult()); /* result = 12 */
+
+/*calculadora.divide();
 console.log(calculadora.getResult()); /* result = 2 */
 
-calculadora.subtract();
+/*calculadora.subtract();
 console.log(calculadora.getResult()); /* result = 3 */
 
 calculadora.clear();
-console.log(calculadora.getResult()); /* all operands and result = 0 */
+console.log(calculadora.getOperand1() + ", " + calculadora.getOperand2() + ", " + calculadora.getResult() + ", " + calculadora.getResultAsOperand1()); /* all operands and result = 0, setResultAsOperand1 = false */
