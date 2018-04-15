@@ -1,6 +1,5 @@
-/*import Persona from "./Persona";*/
-const Persona = require("./persona.js");
-const Calculator = require("./calculator.js");
+const Persona = require("./Persona.js");
+const Calculator = require(".Calculator.js");
 
 let nums = [1, 2, 3];
 nums.push(4);

@@ -25,18 +25,6 @@ class Calculator {
         return this.operand2;
     };
 
-    setResult (value) {
-
-        if (this.resultAsOperand1) {
-
-            this.operand1 = value;
-            this.result = this.operand1;
-        } else {
-
-           this.result = value;
-        };
-    };
-
     sum () {
 
         this.setResult(this.operand1 + this.operand2);
@@ -62,12 +50,21 @@ class Calculator {
         this.setResult(Math.pow(this.operand1, this.operand2));
     };
 
+    /**
+     * if true, the following operations change the result and copy the result to the operand1.
+     * if false, the following operations just change the result.
+     */
     setResultAsOperand1 (b) {
 
-        if (b) {
-            this.resultAsOperand1 = true;
+        this.resultAsOperand1 = b;
+    };
+
+    setResult (value) {
+
+        this.result = value;
+
+        if (this.resultAsOperand1) {
             this.operand1 = this.result;
-            this.operand2 = 0;
         };
     };
 
