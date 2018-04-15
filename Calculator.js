@@ -25,86 +25,41 @@ class Calculator {
         return this.operand2;
     };
 
-    operatorFunction (operation, bool) {
+    setResult (value) {
 
-        if (bool) {
+        if (this.resultAsOperand1) {
 
-            this.operand1 = operation;
+            this.operand1 = value;
             this.result = this.operand1;
         } else {
 
-           this.result = operation;
+           this.result = value;
         };
     };
 
     sum () {
 
-        /*if (this.resultAsOperand1) {
-
-            this.operand1 = this.operand1 + this.operand2;
-            this.result = this.operand1;
-        } else {
-
-            this.result = this.operand1 + this.operand2;
-        };*/
-
-        this.operatorFunction(this.operand1 + this.operand2, this.resultAsOperand1);
+        this.setResult(this.operand1 + this.operand2);
     };
 
     multiply () {
 
-        /*if (this.resultAsOperand1) {
-
-            this.operand1 = this.operand1 * this.operand2;
-            this.result = this.operand1;
-        } else {
-
-            this.result = this.operand1 * this.operand2;
-        };*/
-
-        this.operatorFunction(this.operand1 * this.operand2, this.resultAsOperand1);
+        this.setResult(this.operand1 * this.operand2);
     };
 
     divide () {
 
-        /*if (this.resultAsOperand1) {
-
-            this.operand1 = this.operand1 / this.operand2;
-            this.result = this.operand1;
-        } else {
-
-            this.result = this.operand1 / this.operand2;
-        };*/
-
-        this.operatorFunction(this.operand1 / this.operand2, this.resultAsOperand1);
+        this.setResult(this.operand1 / this.operand2);
     };
 
     subtract () {
 
-        /*if (this.resultAsOperand1) {
-
-            this.operand1 = this.operand1 - this.operand2;
-            this.result = this.operand1;
-        } else {
-
-            this.result = this.operand1 - this.operand2;
-        };*/
-
-        this.operatorFunction(this.operand1 - this.operand2, this.resultAsOperand1);
+        this.setResult(this.operand1 - this.operand2);
     };
 
     power () {
 
-        /*if (this.resultAsOperand1) {
-
-            this.operand1 = Math.pow(this.operand1, this.operand2);
-            this.result = this.operand1;
-        } else {
-
-            this.result = Math.pow(this.operand1, this.operand2);
-        };*/
-
-        this.operatorFunction(Math.pow(this.operand1, this.operand2), this.resultAsOperand1);
+        this.setResult(Math.pow(this.operand1, this.operand2));
     };
 
     setResultAsOperand1 (b) {
