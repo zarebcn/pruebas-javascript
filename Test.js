@@ -43,7 +43,10 @@ console.log(salute(name));
 /*crear clase Car y objetos Car*/
 let car1 = new Car ("BMW", "M3", 30000);
 let car2 = new Car ("Ferrari", "Testarossa", 180000);
-let car3 = new Car ("Renault", "Clio", 6500);
+let car3 = new Car ("Renault", "Clio", 9600);
+let car4 = new Car ("Bugatti", "Veyron", 1280000);
+let car5 = new Car ("Citroen", "Xsara", 12000);
+let car6 = new Car ("Audi", "A4", 15000);
 
 function Car (marca, modelo, precio) {
 
@@ -57,7 +60,7 @@ function Car (marca, modelo, precio) {
 
 console.log(car1.descripcion());
 
-let cars = [car1, car2, car3];
+let cars = [car1, car2, car3, car4, car5, car6];
 
 /*sacar el coche mas caro*/
 let caro = function (cars) {
@@ -149,5 +152,8 @@ console.log(calculadora.getOperand1() + ", " + calculadora.getOperand2() + ", " 
 let car_brands = cars.map((car) => car.marca); /* guarda en un array los coches por marca */
 car_brands.forEach((car) => console.log(car));
 
-let cars_filtered = cars.filter((car) => car.precio >= 30000); /* guarda en un array los coches filtrados por precio mayor o igual a 30000 */
-cars_filtered.forEach((car) => console.log(car.descripcion()));
+let cars_filtered_by_price = cars.filter((car) => car.precio >= 30000); /* guarda en un array los coches filtrados por precio mayor o igual a 30000 */
+cars_filtered_by_price.forEach((car) => console.log(car.descripcion()));
+
+let cars_filtered_by_brand_starting_letter = cars.filter((car) => car.marca.toLowerCase().startsWith("b")); /* filtra por marcas que empiecen por "b" */
+cars_filtered_by_brand_starting_letter.forEach((car) => console.log(car.descripcion()));
