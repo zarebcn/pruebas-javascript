@@ -1,5 +1,5 @@
 const Persona = require("./Persona.js");
-const Calculator = require(".Calculator.js");
+const Calculator = require("./Calculator.js");
 
 let nums = [1, 2, 3];
 nums.push(4);
@@ -144,3 +144,10 @@ console.log(calculadora.getResult()); /* result = 3 */
 
 calculadora.clear();
 console.log(calculadora.getOperand1() + ", " + calculadora.getOperand2() + ", " + calculadora.getResult() + ", " + calculadora.getResultAsOperand1()); /* all operands and result = 0, setResultAsOperand1 = false */
+
+/* uso de map y filter con el array cars */
+let car_brands = cars.map((car) => car.marca); /* guarda en un array los coches por marca */
+car_brands.forEach((car) => console.log(car));
+
+let cars_filtered = cars.filter((car) => car.precio >= 30000); /* guarda en un array los coches filtrados por precio mayor o igual a 30000 */
+cars_filtered.forEach((car) => console.log(car.descripcion()));
